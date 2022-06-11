@@ -3,7 +3,6 @@ package com.dh.catalogservice.controller;
 import com.dh.catalogservice.service.CatalogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.server.RequestPath;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +18,7 @@ public class CatalogControler {
     private CatalogService service;
 
     @GetMapping("{genre}")
-    public ResponseEntity<List<?>> findCatalogByGenre(@PathVariable String genre){
-        return ResponseEntity.ok(service.findCatalogByGenre(genre));
+    public ResponseEntity<List<?>> getCatalogByGenre(@PathVariable String genre){
+        return ResponseEntity.ok(service.getCatalogByGenre(genre));
     }
 }

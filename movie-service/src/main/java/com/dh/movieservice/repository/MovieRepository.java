@@ -10,5 +10,5 @@ import java.util.Optional;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie,Long> {
 
-   Optional< List<Movie>> findAllByGenre(String genre);
+   Optional<List<Movie>> findAllByGenreContainsIgnoreCase(String genre);
 }
